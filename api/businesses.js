@@ -2,7 +2,7 @@
 // Deploy on Vercel. Set these as Environment Variables in your Vercel project
 // (never commit them to source):
 //   AIRTABLE_BASE_ID
-//   AIRTABLE_TOKEN        (read-only PAT, scoped to this base)
+//   BBLA_API_readonly        (read-only PAT, scoped to this base)
 //   AIRTABLE_TABLE        (e.g. "Businesses")
 
 const CACHE_DURATION_MS = 5 * 60 * 1000; // 5 minutes
@@ -13,7 +13,7 @@ let cache = { data: null, timestamp: 0 };
 
 
 async function fetchAllFromAirtable() {
-  const { AIRTABLE_BASE_ID, AIRTABLE_TOKEN, AIRTABLE_TABLE } = process.env;
+  const { AIRTABLE_BASE_ID, BBLA_API_readonly, AIRTABLE_TABLE } = process.env;
   let records = [];
   let offset;
 
