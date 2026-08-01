@@ -27,7 +27,6 @@ interface Business {
   facebook: string;
   media: string;
   story: string;
-  hasPromo: boolean;
 }
 
 interface Cache {
@@ -61,10 +60,17 @@ async function fetchAllBusinesses(): Promise<Business[]> {
   return records.map((r) => ({
     id: r.id,
     name: (r.get('Name') as string) ?? 'Unnamed',
+    mainAfroLaCategory: (r.get('Main AfroLa Category') as string) ?? 'Other',
     category: (r.get('Category') as string) ?? 'Other',
-    location: (r.get('Location') as string) ?? 'Online',
-    rating: (r.get('Rating') as number) ?? null,
-    hasPromo: !!r.get('HasPromo'),
+    neighborhood: (r.get('Neighborhood') as string) ?? 'NA',
+    streetAddress: (r.get('Street Address') as string) ?? 'NA',
+    Phone: (r.get('Phone') as string) ?? 'NA',
+    email: (r.get('Email') as string) ?? 'NA',
+    website: (r.get('Website') as string) ?? 'NA',
+    instagram: (r.get('Instagram') as string) ?? 'NA',
+    facebook: (r.get('Facebook') as string) ?? 'NA',
+    media: (r.get('Media') as string) ?? 'NA',
+    story: (r.get('Story') as string) ?? 'NA',
   }));
 }
 
