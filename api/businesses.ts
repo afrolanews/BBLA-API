@@ -55,7 +55,9 @@ async function fetchAllBusinesses(): Promise<Business[]> {
   const base = getBase();
   const tableName = process.env.AIRTABLE_TABLE ?? 'BBLA Businesses';
 
-  const records = await base(tableName).select().all(); // SDK handles pagination internally
+  const records = await base(tableName).select({
+    sort: [{ field: 'Name', direction: 'asc' }],
+  }).all(); // SDK handles pagination internally
 
   return records.map((r) => ({
     id: r.id,
