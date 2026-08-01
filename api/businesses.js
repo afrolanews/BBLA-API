@@ -19,7 +19,7 @@ async function fetchAllFromAirtable() {
 
   do {
     const url = new URL(
-      `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE}`
+      `https://api.airtable.com/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE}`
     );
     if (offset) url.searchParams.set('offset', offset);
 
