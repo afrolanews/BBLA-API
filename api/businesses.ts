@@ -27,6 +27,7 @@ interface Business {
   facebook: string;
   media: string;
   story: string;
+  description: string;
 }
 
 interface Cache {
@@ -72,7 +73,8 @@ async function fetchAllBusinesses(): Promise<Business[]> {
     instagram: (r.get('Instagram') as string) ?? 'NA',
     facebook: (r.get('Facebook') as string) ?? 'NA',
     media: (r.get('Media') as string) ?? 'NA',
-    story: (r.get('Story') as string) ?? 'NA',
+    story: (r.get('Business Story') as string) ?? 'NA',
+    description: (r.get('Business Desc') as string) ?? 'NA',
   }));
 }
 
