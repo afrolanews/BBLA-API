@@ -1,5 +1,17 @@
 {
   "name": "buy-black-la-api",
   "version": "1.0.0",
-  "private": true
+  "private": true,
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "tsc --noEmit"
+  },
+  "dependencies": {
+    "airtable": "^0.12.2"
+  },
+  "devDependencies": {
+    "@vercel/node": "^3.0.0",
+    "typescript": "^5.4.0",
+    "@types/node": "^20.0.0"
+  }
 }
