@@ -53,7 +53,7 @@ function getBase() {
 
 async function fetchAllBusinesses(): Promise<Business[]> {
   const base = getBase();
-  const tableName = process.env.AIRTABLE_TABLE ?? 'Businesses';
+  const tableName = process.env.AIRTABLE_TABLE ?? 'BBLA Businesses';
 
   const records = await base(tableName).select().all(); // SDK handles pagination internally
 
