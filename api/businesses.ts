@@ -16,9 +16,17 @@ const CACHE_DURATION_MS = 5 * 60 * 1000; // 5 minutes
 interface Business {
   id: string;
   name: string;
+  mainAfroLaCategory: string;
   category: string;
-  location: string;
-  rating: number | null;
+  neighborhood: string;
+  streetAddress: string;
+  Phone: string;
+  email: string;
+  website: string;
+  instagram: string;
+  facebook: string;
+  media: string;
+  story: string;
   hasPromo: boolean;
 }
 
