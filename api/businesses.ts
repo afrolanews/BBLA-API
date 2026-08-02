@@ -90,7 +90,7 @@ async function fetchAllBusinesses(): Promise<Business[]> {
   return records.map((r) => ({
     id: r.id,
     name: (r.get('Name') as string) ?? 'Unnamed',
-    mainAfroLaCategory: (r.get('Main AfroLa Category') as string) ?? 'Other',
+    mainAfroLaCategory: (r.get('Main AfroLa category') as string) ?? 'Other',
     category: (r.get('Category') as string) ?? 'Other',
     neighborhood: (r.get('Neighborhood') as string) ?? 'NA',
     streetAddress: (r.get('Street Address') as string) ?? 'NA',
