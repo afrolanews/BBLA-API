@@ -42,6 +42,7 @@ interface Business {
   media: string;
   story: string;
   description: string;
+  eventsAndPromos: string;
 }
 
 /**
@@ -90,7 +91,7 @@ async function fetchAllBusinesses(): Promise<Business[]> {
   return records.map((r) => ({
     id: r.id,
     name: (r.get('Name') as string) ?? 'Unnamed',
-    mainAfroLaCategory: (r.get('Main AfroLa category') as string) ?? 'Other',
+    mainAfroLaCategory: (r.get('Main AfroLA category') as string) ?? 'Other',
     category: (r.get('Category') as string) ?? 'Other',
     neighborhood: (r.get('Neighborhood') as string) ?? 'NA',
     streetAddress: (r.get('Street Address') as string) ?? 'NA',
@@ -102,6 +103,8 @@ async function fetchAllBusinesses(): Promise<Business[]> {
     media: (r.get('Media') as string) ?? 'NA',
     story: (r.get('Business Story') as string) ?? 'NA',
     description: (r.get('Business Desc') as string) ?? 'NA',
+    eventsAndPromos: (r.get('Events & Promos') as string) ?? 'NA',
+
   }));
 }
 
