@@ -42,7 +42,7 @@ interface Business {
   media: string;
   story: string;
   description: string;
-  eventsAndPromos: string;
+  eventsAndPromos: object;
 }
 
 /**
@@ -103,7 +103,7 @@ async function fetchAllBusinesses(): Promise<Business[]> {
     media: (r.get('Media') as string) ?? 'NA',
     story: (r.get('Business Story') as string) ?? 'NA',
     description: (r.get('Business Desc') as string) ?? 'NA',
-    eventsAndPromos: (r.get('Events & Promos') as string) ?? 'NA',
+    eventsAndPromos: (r.get('Events & Promos') as object) ?? 'NA',
 
   }));
 }
