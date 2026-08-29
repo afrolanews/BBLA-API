@@ -92,7 +92,7 @@ let cache: Cache = { data: null, timestamp: 0 };
  * @throws {Error} If required environment variables are missing.
  */
 function getBase() {
-  const apiKey = process.env.AIRTABLE_API_KEY;
+  const apiKey = process.env.BBLA_API_readonly;
   const baseId = process.env.AIRTABLE_BASE_ID;
 
   if (!apiKey || !baseId) {
