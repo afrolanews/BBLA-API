@@ -70,6 +70,7 @@ interface EventOrPromo {
   attendees: string[]; // multi-select
   eventEmail: string | null;
   eventLink: string | null;
+  type: string | null;
 }
 
 /**
@@ -188,7 +189,7 @@ function linkedRecordIds(record: Airtable.Record<Airtable.FieldSet>, field: stri
  */
 async function fetchEventsAndPromosMap(): Promise<Map<string, EventOrPromo>> {
   const base = getBase();
-  const tableName = process.env.AIRTABLE_EVENTS_TABLE ?? 'BBLA Events';
+  const tableName = process.env.AIRTABLE_EVENTS_TABLE ?? 'BBLA Events & Promos';
 
   const records = await base(tableName).select().all();
 
@@ -210,6 +211,7 @@ async function fetchEventsAndPromosMap(): Promise<Map<string, EventOrPromo>> {
       attendees: multiSelect(r, 'Attendees'),
       eventEmail: str(r, 'Event email'),
       eventLink: str(r, 'Event link'),
+      type: str(r, 'Type')
     });
   }
   return map;
