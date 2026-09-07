@@ -87,6 +87,8 @@ interface Business {
   category: string[];
   neighborhood: string[];
   streetAddress: string | null;
+  latitude: number | null;
+  longitude: number | null;
   phone: string | null;
   email: string | null;
   website: string | null;
@@ -253,6 +255,8 @@ async function fetchAllBusinesses(): Promise<Business[]> {
       category: multiSelect(r, 'Category'),
       neighborhood: multiSelect(r, 'Neighborhood'),
       streetAddress: str(r, 'Street Address'),
+      latitude: num(r, 'Latitude'),
+      longitude: num(r, 'Longitude'),
       phone: str(r, 'Phone'),
       email: str(r, 'Email'),
       website: str(r, 'Website'),
