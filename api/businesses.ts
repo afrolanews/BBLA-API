@@ -70,7 +70,7 @@ interface EventOrPromo {
   attendees: string[]; // multi-select
   eventEmail: string | null;
   eventLink: string | null;
-  type: string | null;
+  type: 'event' | 'promo';
 }
 
 /**
@@ -211,7 +211,7 @@ async function fetchEventsAndPromosMap(): Promise<Map<string, EventOrPromo>> {
       attendees: multiSelect(r, 'Attendees'),
       eventEmail: str(r, 'Event email'),
       eventLink: str(r, 'Event link'),
-      type: str(r, 'Type')
+      type: str(r, 'Type') === 'promo' ? 'promo' : 'event',
     });
   }
   return map;
